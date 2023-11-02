@@ -7,7 +7,7 @@ import { Cep } from './components/cep';
 function App() {
   return (
     <AppProvider>
-      <CroctProvider appId="cbebd74e-103e-4592-8e04-02564b5a0d64">
+      <CroctProvider appId="9dec254a-7fe2-4aa8-b5ff-10523e82816c">
         <HomeBanner />
         <Cep />
       </CroctProvider>
