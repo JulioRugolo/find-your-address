@@ -1,6 +1,9 @@
 import { useContent } from '@croct/plug-react';
+import AppContext from '../context/AppContext';
+import { useContext } from 'react';
 
 export function HomeBanner() {
+  const { banner, setBanner } = useContext(AppContext);
   const content = useContent('homepage-hero', {
     initial: null,
     fallback: {
@@ -16,13 +19,12 @@ export function HomeBanner() {
 
   const {title, subtitle, cta: {label} } = content
 
+
   const handleClick = () => {
-    window.croct.track('banner-clicked', {
-      banner: 'homepage-hero',
-    });
+    setBanner(false);
   };
 
-  return (
+  return banner && (
     <div id="hero-banner">
       <h1>{title}</h1>
       <p className="subtitle">{subtitle}</p>
@@ -30,5 +32,6 @@ export function HomeBanner() {
         {label}
       </button>
     </div>
-  );
+  )
+  
 }
