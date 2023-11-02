@@ -14,15 +14,21 @@ export function HomeBanner() {
     return <div>🪄 Personalizing...</div>;
   }
 
-  const {title, subtitle, cta: {link, label} } = content
+  const {title, subtitle, cta: {label} } = content
+
+  const handleClick = () => {
+    window.croct.track('banner-clicked', {
+      banner: 'homepage-hero',
+    });
+  };
 
   return (
     <div id="hero-banner">
       <h1>{title}</h1>
       <p className="subtitle">{subtitle}</p>
-      <a className="cta" href={link}>
+      <button className="cta" onClick={() => handleClick()}>
         {label}
-      </a>
+      </button>
     </div>
   );
 }
