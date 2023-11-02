@@ -1,5 +1,5 @@
 <details>
-<summary>English Version</summary>
+<summary><h1><b>🇺🇸 | English Version</b></h1></summary>
 
 # Custom Banner Integration Test
 
@@ -46,7 +46,7 @@ julio@rugolo.dev
 </details>
 
 <details>
-<summary>Versão em Português</summary>
+<summary><h1><b>🇧🇷 | Versão em Português</b></h1></summary>
 
 # Teste de Integração de Banner Personalizado
 
