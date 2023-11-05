@@ -1,7 +1,6 @@
 import React from 'react';
 import { useContent } from '@croct/plug-react';
 import { useNavigate } from 'react-router-dom';
-import '../App.css';
 
 export function HomeBanner() {
   const navigate = useNavigate();

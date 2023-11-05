@@ -18,6 +18,54 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cep-title {
+  color: black;
+  font-weight: 800;
+}
+
+input {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #ccc;
+  color: black;
+  text-align: center;
+}
+
+.container-info {
+  background-color: #ccc;
+  color:black;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  text-align: left;
+}
+
+.container-info-error {
+  display: flex;
+  background-color: #0a0a0a;
+  color:red;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 16px;
+  text-align: left;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+}
+
+.container-info p span {
+  font-weight: 800;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
