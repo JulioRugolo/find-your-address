@@ -1,9 +1,8 @@
-import { useContext, useState } from 'react';
-import AppContext from '../context/AppContext';
+import React, { useEffect, useState } from 'react';
 import './cep.css';
+import '../App.css';
 
 export function Cep() {
-  const { banner } = useContext(AppContext);
   const [cep, setCep] = useState([]);
   const [infoCep, setInfoCep] = useState({});
   const {logradouro, bairro, localidade, uf} = infoCep;
@@ -21,10 +20,9 @@ export function Cep() {
     setCep(cleanedCep);
   };
 
-
-  return !banner && (
+  return (
     <div className='container'>
-      <h1 className='cep-title'>Digite seu CEP</h1>
+      <h1 className='cep-title' data-test-id="search" >Digite seu CEP</h1>
       <input type="text" value={cep} onChange={handleChange} />
       <button onClick={() => getCep(cep)}>Buscar</button>
       {infoCep?.logradouro && <div className='container-info'>

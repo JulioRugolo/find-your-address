@@ -1,9 +1,10 @@
+import React from 'react';
 import { useContent } from '@croct/plug-react';
-import AppContext from '../context/AppContext';
-import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import '../App.css';
 
 export function HomeBanner() {
-  const { banner, setBanner } = useContext(AppContext);
+  const navigate = useNavigate();
   const content = useContent('homepage-hero', {
     initial: null,
     fallback: {
@@ -12,19 +13,18 @@ export function HomeBanner() {
       cta: 'Your static CTA',
     },
   });
-
+  
   if (content === null) {
     return <div>🪄 Personalizing...</div>;
   }
-
-  const {title, subtitle, cta: {label} } = content
-
-
+  
+  const { title, subtitle, cta: { label } } = content;
+  
   const handleClick = () => {
-    setBanner(false);
+    navigate('/cep');
   };
 
-  return banner && (
+  return (
     <div id="hero-banner">
       <h1>{title}</h1>
       <p className="subtitle">{subtitle}</p>
@@ -32,6 +32,5 @@ export function HomeBanner() {
         {label}
       </button>
     </div>
-  )
-  
+  );
 }
